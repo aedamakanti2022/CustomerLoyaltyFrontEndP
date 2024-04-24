@@ -129,10 +129,13 @@ const Dashboard = () => {
     }
   }, [token]);
 
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState({});
 
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
+  const togglePopup = (customerId, open) => {
+    setShowPopup((prev) => ({
+      ...prev,
+      [customerId]: open,
+    }));
   };
 
   const divStyle = {
@@ -171,7 +174,7 @@ const Dashboard = () => {
                   {customer.redeemLimit}
                 </p>
 
-                {showPopup && (
+                {showPopup[customer._id] && (
                   <div className="popup">
                     <div className="popup-inner">
                       <h2>Redeem</h2>
@@ -219,7 +222,7 @@ const Dashboard = () => {
                             Redeem
                           </button>
                           <button
-                            onClick={togglePopup}
+                            onClick={(e) => togglePopup(customer._id, false)}
                             style={{
                               borderRadius: "20px",
                               backgroundColor: "red",
@@ -237,7 +240,7 @@ const Dashboard = () => {
                   </div>
                 )}
                 <button
-                  onClick={togglePopup}
+                  onClick={(e) => togglePopup(customer._id, true)}
                   style={{
                     borderRadius: "20px",
                     backgroundColor: "blue",
