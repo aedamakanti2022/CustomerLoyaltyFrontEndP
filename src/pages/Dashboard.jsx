@@ -76,7 +76,7 @@ const Dashboard = () => {
     let redeemedPoints = parseFloat(reward - e.target.redeemPoints.value);
     console.log(points, redeemedPoints, business, reward, limit, "Hello");
 
-    if (parseFloat(points) <= parseFloat(limit)) {
+    if (parseFloat(points) < parseFloat(limit)) {
       toast.error(
         "The redeem limit is higher, please try again with higher value!"
       );
