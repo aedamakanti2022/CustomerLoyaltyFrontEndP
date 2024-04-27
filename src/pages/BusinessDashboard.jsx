@@ -406,6 +406,7 @@ const Dashboard = () => {
               )}
             </div>
           </div>
+          <Link to="/redeemHistory">Redeem History</Link>
           <Link to="/logout" className="logout-button">
             Logout
           </Link>

@@ -13,6 +13,7 @@ import {
 import { ToastContainer } from "react-toastify";
 import ForgetPassword from "./pages/ForgetPassword";
 import ForgetPasswordBusiness from "./pages/ForgetPasswordBusiness";
+import RedeemHistory from "./pages/RedeemHistory";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "forgetPassword",
         element: <ForgetPassword />,
+      },
+      {
+        path: "redeemHistory",
+        element: <RedeemHistory />,
       },
       {
         path: "forgetPasswordBusiness",

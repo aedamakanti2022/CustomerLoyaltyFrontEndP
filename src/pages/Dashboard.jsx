@@ -74,7 +74,7 @@ const Dashboard = () => {
     e.preventDefault();
     let points = parseFloat(e.target.redeemPoints.value);
     let redeemedPoints = parseFloat(reward - e.target.redeemPoints.value);
-    console.log(redeemedPoints);
+    console.log(points, redeemedPoints, business, reward, limit, "Hello");
 
     if (parseFloat(points) <= parseFloat(limit)) {
       toast.error(
@@ -254,7 +254,6 @@ const Dashboard = () => {
                 </button>
               </div>
             ))}
-            ;
           </div>
           <Link to="/logout" className="logout-button">
             Logout
