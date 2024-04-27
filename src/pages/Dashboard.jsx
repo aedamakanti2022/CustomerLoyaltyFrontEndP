@@ -88,6 +88,7 @@ const Dashboard = () => {
         customerId: data.customerId,
         businessId: business,
         redeemedPoints: redeemedPoints,
+        points
       };
       // console.log( "reward " + reward);
       // console.log( "limit " + limit);
