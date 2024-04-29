@@ -206,7 +206,7 @@ const Dashboard = () => {
         togglePopup();
       } catch (err) {
         console.log(err);
-        toast.error(err.message);
+        toast.error(err.response.data?.error || "Please try again!");
       }
     } else {
       toast.error("Please fill all inputs");
